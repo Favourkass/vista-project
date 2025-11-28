@@ -339,11 +339,20 @@ vista-project/
 
 ### Frontend Architecture
 
-- **Component-Based**: Single-page application with React
-- **State Management**: React hooks (useState, useEffect, useCallback)
-- **API Integration**: Axios for HTTP requests
+- **Component-Based**: Modular React components with single responsibility principle
+- **Service Layer**: API calls abstracted into `services/api.ts` for separation of concerns
+- **Custom Hooks**: Business logic encapsulated in reusable hooks (`useRankings`)
+- **Type Safety**: TypeScript types in dedicated `types/` directory
+- **Utility Functions**: Pure functions in `utils/` for calculations and ratings
+- **Separation of Concerns**:
+  - **Components**: Presentational UI components (Header, Footer, IndicatorCard, etc.)
+  - **Services**: API communication layer (api.ts)
+  - **Hooks**: State management and side effects (useRankings)
+  - **Utils**: Pure calculation functions (calculations.ts, ratings.ts)
+  - **Types**: TypeScript type definitions (index.ts)
+- **Scalable Design**: Easy to add new indicators, components, or features
 - **Responsive Design**: CSS Grid and Flexbox for layouts
-- **Type Safety**: TypeScript interfaces for data structures
+- **Maintainable**: Clear file structure makes code easy to navigate and modify
 
 ## 🎨 UI/UX Features
 
