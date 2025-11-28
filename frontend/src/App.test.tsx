@@ -1,11 +1,15 @@
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import axios from "axios";
 import App from "./App";
 
 // Mock axios
-jest.mock("axios");
-const mockedAxios = axios as jest.Mocked<typeof axios>;
+const mockPost = jest.fn();
+jest.mock("axios", () => ({
+  __esModule: true,
+  default: {
+    post: mockPost,
+  },
+}));
 
 describe("App Component", () => {
   const mockRankings = [
@@ -30,7 +34,7 @@ describe("App Component", () => {
   ];
 
   beforeEach(() => {
-    mockedAxios.post.mockResolvedValue({
+    mockPost.mockResolvedValue({
       data: { rankings: mockRankings },
     });
   });
@@ -96,7 +100,7 @@ describe("App Component", () => {
     fireEvent.change(economicSlider, { target: { value: "50" } });
 
     await waitFor(() => {
-      expect(mockedAxios.post).toHaveBeenCalledWith(
+      expect(mockPost).toHaveBeenCalledWith(
         expect.stringContaining("/calculate-rankings/"),
         {
           economic_weight: 50,
@@ -128,7 +132,7 @@ describe("App Component", () => {
   });
 
   test("handles API errors gracefully", async () => {
-    mockedAxios.post.mockRejectedValueOnce(new Error("API Error"));
+    mockPost.mockRejectedValueOnce(new Error("API Error"));
     render(<App />);
 
     await waitFor(() => {
