@@ -1,0 +1,6 @@
+[build]
+  ignore = ["frontend/*"]
+
+[deploy]
+  root = "backend"
+
