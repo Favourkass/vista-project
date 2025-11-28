@@ -1,0 +1,65 @@
+.slider-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.slider-group label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider-label {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.slider-value {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 1.1rem;
+  min-width: 40px;
+  text-align: right;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--bg-secondary);
+  outline: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.economic-slider::-webkit-slider-thumb {
+  background: var(--accent-economic);
+  box-shadow: 0 0 10px var(--accent-economic);
+}
+
+.impact-slider::-webkit-slider-thumb {
+  background: var(--accent-impact);
+  box-shadow: 0 0 10px var(--accent-impact);
+}
+
+.infrastructure-slider::-webkit-slider-thumb {
+  background: var(--accent-infrastructure);
+  box-shadow: 0 0 10px var(--accent-infrastructure);
+}
+

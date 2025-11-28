@@ -1,0 +1,13 @@
+.indicator-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .indicator-cards {
+    grid-template-columns: 1fr;
+  }
+}
+

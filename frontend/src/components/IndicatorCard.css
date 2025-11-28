@@ -1,0 +1,70 @@
+.indicator-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.indicator-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.indicator-card.economic {
+  border-left: 4px solid var(--accent-economic);
+}
+
+.indicator-card.impact {
+  border-left: 4px solid var(--accent-impact);
+}
+
+.indicator-card.infrastructure {
+  border-left: 4px solid var(--accent-infrastructure);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+}
+
+.card-content h3 {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.percentage {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: "Space Mono", monospace;
+}
+
+.economic .percentage {
+  color: var(--accent-economic);
+}
+
+.impact .percentage {
+  color: var(--accent-impact);
+}
+
+.infrastructure .percentage {
+  color: var(--accent-infrastructure);
+}
+
+@media (max-width: 768px) {
+  .percentage {
+    font-size: 2rem;
+  }
+}
+

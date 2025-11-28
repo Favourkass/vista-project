@@ -294,19 +294,37 @@ vista-project/
 │   │   └── tests.py           # Backend unit tests
 │   ├── config/
 │   │   ├── settings.py        # Django settings
-│   │   └── urls.py             # Root URLs
+│   │   └── urls.py            # Root URLs
 │   ├── manage.py
 │   ├── requirements.txt
-│   ├── Procfile               # Heroku/Render deployment
+│   ├── Procfile               # Render deployment
 │   └── runtime.txt            # Python version
 ├── frontend/
 │   ├── src/
-│   │   ├── App.tsx            # Main component
-│   │   ├── App.css            # Styles
-│   │   ├── App.test.tsx       # Frontend tests
-│   │   └── index.tsx          # Entry point
+│   │   ├── components/        # Reusable UI components
+│   │   │   ├── Header.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   ├── IndicatorCard.tsx
+│   │   │   ├── IndicatorCards.tsx
+│   │   │   ├── WeightSlider.tsx
+│   │   │   ├── WeightSliders.tsx
+│   │   │   ├── RankingsTable.tsx
+│   │   │   └── FormulaSection.tsx
+│   │   ├── services/          # API service layer
+│   │   │   └── api.ts        # API client and endpoints
+│   │   ├── hooks/            # Custom React hooks
+│   │   │   └── useRankings.ts # Rankings data management
+│   │   ├── types/            # TypeScript type definitions
+│   │   │   └── index.ts
+│   │   ├── utils/            # Utility functions
+│   │   │   ├── calculations.ts
+│   │   │   └── ratings.ts
+│   │   ├── App.tsx           # Main app component
+│   │   ├── App.css           # Global styles
+│   │   ├── App.test.tsx      # Frontend tests
+│   │   └── index.tsx         # Entry point
 │   ├── package.json
-│   └── vercel.json            # Vercel configuration
+│   └── vercel.json           # Vercel configuration
 └── README.md
 ```
 
