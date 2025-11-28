@@ -16,6 +16,6 @@
     }
   ],
   "env": {
-    "REACT_APP_API_URL": "https://your-backend-url.herokuapp.com/api"
+    "REACT_APP_API_URL": "https://vista-project.onrender.com/api"
   }
 }
