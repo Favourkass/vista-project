@@ -9,6 +9,7 @@ Run the automated deployment script:
 ```
 
 This will:
+
 1. ✅ Deploy backend to Heroku
 2. ✅ Deploy frontend to Vercel
 3. ✅ Configure environment variables
@@ -77,15 +78,17 @@ vercel --prod
 ## Troubleshooting
 
 ### Heroku: "Couldn't find that app"
+
 - Make sure you're logged in: `heroku login`
 - Check your apps: `heroku apps`
 - The app name might be different, check with `heroku apps`
 
 ### Heroku: "error: src refspec main does not match"
+
 - Make sure you're on the main branch: `git branch -M main`
 - Commit your changes: `git add . && git commit -m "Deploy"`
 
 ### Vercel: Build fails
+
 - Check that `package.json` has `vercel-build` script
 - Verify environment variables are set correctly
-

@@ -11,12 +11,14 @@ Since Heroku is now paid, here are the best **FREE** alternatives for deploying 
 1. **Sign up:** https://railway.app (use GitHub login)
 
 2. **Create New Project:**
+
    - Click "New Project"
    - Select "Deploy from GitHub repo"
    - Choose your repository
    - Set Root Directory: `backend`
 
 3. **Configure:**
+
    - Railway auto-detects Python/Django
    - Add Environment Variables:
      - `DEBUG` = `False`
@@ -64,8 +66,8 @@ railway up
      - **Environment:** `Python 3`
      - **Build Command:** `pip install -r requirements.txt`
      - **Start Command:** `gunicorn config.wsgi:application --bind 0.0.0.0:$PORT`
-   
 3. **Environment Variables:**
+
    - `DEBUG` = `False`
    - `SECRET_KEY` = (click "Generate" or use a random string)
    - `ALLOWED_HOSTS` = `lagos-lga-api.onrender.com`
@@ -86,16 +88,19 @@ railway up
 ### Deploy to Fly.io:
 
 1. **Install CLI:**
+
    ```bash
    curl -L https://fly.io/install.sh | sh
    ```
 
 2. **Sign up:**
+
    ```bash
    fly auth signup
    ```
 
 3. **Create app:**
+
    ```bash
    cd backend
    fly launch
@@ -122,23 +127,25 @@ railway up
 
 ## 📊 Comparison
 
-| Platform | Free Tier | Ease of Use | Auto-Deploy | Best For |
-|----------|-----------|-------------|-------------|----------|
-| **Railway** | $5/month credit | ⭐⭐⭐⭐⭐ | ✅ Yes | Production apps |
-| **Render** | Free forever | ⭐⭐⭐⭐ | ✅ Yes | Development/Testing |
-| **Fly.io** | 3 VMs free | ⭐⭐⭐ | ✅ Yes | Global distribution |
-| **PythonAnywhere** | Free forever | ⭐⭐⭐ | ❌ No | Simple apps |
+| Platform           | Free Tier       | Ease of Use | Auto-Deploy | Best For            |
+| ------------------ | --------------- | ----------- | ----------- | ------------------- |
+| **Railway**        | $5/month credit | ⭐⭐⭐⭐⭐  | ✅ Yes      | Production apps     |
+| **Render**         | Free forever    | ⭐⭐⭐⭐    | ✅ Yes      | Development/Testing |
+| **Fly.io**         | 3 VMs free      | ⭐⭐⭐      | ✅ Yes      | Global distribution |
+| **PythonAnywhere** | Free forever    | ⭐⭐⭐      | ❌ No       | Simple apps         |
 
 ---
 
 ## 🎯 Recommended: Railway or Render
 
 ### Choose Railway if:
+
 - You want the easiest setup
 - You need reliable uptime
 - $5/month credit is acceptable
 
 ### Choose Render if:
+
 - You want completely free
 - You're okay with 15-min spin-up delay
 - You want simple deployment
@@ -148,6 +155,7 @@ railway up
 ## 🚀 Quick Deploy Scripts
 
 I've created configuration files:
+
 - `backend/railway.json` - Railway config
 - `backend/render.yaml` - Render config
 
@@ -169,16 +177,18 @@ Once deployed, update your frontend:
 ## 🔧 Troubleshooting
 
 ### Railway:
+
 - Check logs in Railway dashboard
 - Ensure `PORT` environment variable is set (auto-set)
 - Verify `ALLOWED_HOSTS` includes your Railway domain
 
 ### Render:
+
 - First request may be slow (spinning up)
 - Check "Events" tab for build logs
 - Verify start command is correct
 
 ### CORS Issues:
+
 - Both platforms: Ensure `CORS_ALLOW_ALL_ORIGINS = True` in settings
 - Or set specific origins in `ALLOWED_HOSTS`
-
